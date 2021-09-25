@@ -1,0 +1,79 @@
+//sharing values via link https://www.simmanchith.com/tutorial/html/html-input-types.aspx  
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Today</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .close {
+        cursor: pointer;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 12px 16px;
+        transform: translate(0%, -50%);
+      }
+      .foo {
+        position: absolute;
+
+      }
+      .box{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: medium;
+        color: blueviolet;
+      }
+      </style>
+</head>
+<body>
+
+  <form action="ash.page" target="_blank">
+    <label for="fname" style="padding:10px">City:</label>
+    <input type="text" id="fname" name="city" placeholder="City Name" onkeyup=cityfunction() >
+    <input type="submit" value="submit" >
+  </form>
+    
+
+
+  <script>
+    function cityfunction(){
+      console.log("submitted")
+  city = document.getElementById("fname").value
+  console.log(city)
+    }
+      var closebtns = document.getElementsByClassName("close");
+      var i;
+      
+      for (i = 0; i < closebtns.length; i++) {
+        closebtns[i].addEventListener("click", function() {
+          this.parentElement.style.display = 'none';
+        });
+      }
+      </script>
+    
+
+<div class="card" style="width:500px">
+    <img class="card-img-top" src="F:\codes\weather\static\rain.jpg" alt="Rain">
+    <div class="card-img-overlay" style="font-family:serif;font-size:100%;">
+        <h1 class="card-title">{{  city1.city  }}</h1>
+        <h2 class="card-text">{{  city1.temperature  }} </h2>
+        <h2 class="card-text">{{  city1.description  }} </h2>
+</div><span class="close">&times;</span></div>
+
+<div class="card" style="width:500px">
+    <img class="card-img-top" src="F:\codes\weather\static\sunny.jpg" alt="Summer">
+    <div class="card-img-overlay" style="font-family:serif;font-size:100%;">
+        <h1 class="card-title">{{  city2.city }}</h1>
+        <h2 class="card-text" >{{  city2.temperature }} </h2>
+        <h2 class="card-text">{{  city2.description }} </h2>
+</div><span class="close">&times;</span></div>
+
+
+
+  
+</body>
+</html>
